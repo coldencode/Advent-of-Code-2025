@@ -2,18 +2,18 @@ class Solution:
     def freshIngredients(self, str):
         # print(str)
         keys = str.split("\n\n")
-        ranges = keys[0]
-        rangelist = ranges.split("\n")
+        rngs = keys[0]
+        rnglist = rngs.split("\n")
         lowhigh = []
-        for range in rangelist:
-            spl = range.split("-")
+        for rng in rnglist:
+            spl = rng.split("-")
             lowhigh.append((int(spl[0]), int(spl[1])))
         ids = keys[1].split("\n")
         counter = 0
         for id in ids:
-            for true_range in lowhigh:
+            for true_rng in lowhigh:
                 conv = int(id)
-                if conv <= true_range[1] and conv >= true_range[0]:
+                if conv <= true_rng[1] and conv >= true_rng[0]:
                     counter += 1
                     break
 
